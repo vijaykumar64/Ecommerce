@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env JWT_SECRET=asjhdkjahkjdlfhksahfksad node index.js",
+    "start": "npx cross-env JWT_SECRET=asjhdkjahkjdlfhksahfksad node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
