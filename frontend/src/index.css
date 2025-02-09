@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: canopee;
+  src: url(./Canopee.ttf);
+}
+
+@font-face {
+  font-family: editorial;
+  src: url(./editorial.ttf);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  color: #fff;
+}
+
+.apexcharts-menu {
+  background: #000;
+}
+
+.gradient-text {
+  background-image: linear-gradient(0deg, #ad60eb 43%, #ffffff 88%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+footer {
+  color: #ff4800;
+}
