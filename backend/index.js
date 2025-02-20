@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Enable CORS for frontend access
-app.use(cors({ origin: "https://ecommerce-8ea157.netlify.app/" }));
+app.use(cors({ origin: "http://localhost:5173/" }));
 
 // Routes
 app.use("/api/v1/users", userRouter);
