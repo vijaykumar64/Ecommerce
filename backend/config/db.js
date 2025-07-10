@@ -1,0 +1,22 @@
+const mongoose = require("mongoose");
+require("dotenv").config();
+
+mongoose.set('strictQuery', false); // ✅ avoid warning
+mongoose.set('bufferCommands', false);
+
+const connectDatabase = async () => {
+  try {
+    const connection = await mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://vijaykumar:vijaykumar@cluster0.g8vfxsy.mongodb.net/project1?retryWrites=true&w=majority&appName=Cluster0', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      ssl: true,
+    });
+
+    console.log(`✅ MongoDB connected: ${connection.connection.host}`);
+  } catch (error) {
+    console.error(`❌ MongoDB connection error: ${error.message}`);
+    throw error; // rethrow to allow server.js to handle it
+  }
+};
+
+module.exports = connectDatabase;
