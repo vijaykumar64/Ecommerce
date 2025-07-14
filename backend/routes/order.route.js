@@ -6,7 +6,7 @@ const { Ordermodel } = require("../model/order.model");
 const orderRoute=express.Router();
 
 
-// all orders of specific user
+
 
 orderRoute.get("/",Authentication,async(req,res)=>{
    const userid=req.body.userid;
@@ -21,7 +21,7 @@ orderRoute.get("/",Authentication,async(req,res)=>{
    }
 })
 
-// Adding item to order
+
 
 orderRoute.post("/",Authentication,async(req,res)=>{
     const userid=req.body.userid;
