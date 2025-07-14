@@ -24,7 +24,7 @@ const Chart=({info})=>{
         plugins: {
             legend: {
                 labels: {
-                    // This more specific font property overrides the global property
+                    
                     font: {
                         size: 17
                     },
