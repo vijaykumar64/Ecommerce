@@ -6,20 +6,18 @@ const jwt=require("jsonwebtoken")
 
 
 
-//User login
 userRoute.post("/login",async(req,res)=>{
   const {email,password}=req.body;
   if(email&&password){
         try{
             const userData=await Usermodel.findOne({email});
             if(userData?.name.length>0){
-                //user password
-                //hashed password
+              
                 const isMatch=await bcrypt.compare(password,userData.password);
 
                 if(isMatch){
 
-                    //token 
+                  
                     const token=jwt.sign({"userid":userData._id},process.env.JWT)
                     res.status(200).send({msg:"Login Success",token:token,role:userData.role})
 
@@ -41,7 +39,7 @@ userRoute.post("/login",async(req,res)=>{
 })
 
 
-//Signup
+
 
 userRoute.post("/signup",async(req,res)=>{
     const {name,email,password}=req.body;
