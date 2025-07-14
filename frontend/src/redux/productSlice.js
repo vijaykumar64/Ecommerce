@@ -1,4 +1,4 @@
-// redux/productSlice.js
+
 const { createSlice } = require('@reduxjs/toolkit');
 const BASE_URL = 'http://localhost:8001';
 
@@ -11,8 +11,8 @@ export const STATUSES = Object.freeze({
 const productSlice = createSlice({
   name: 'product',
   initialState: {
-    data: [],         // all products
-    categories: [],   // all unique categories
+    data: [],        
+    categories: [],  
     status: STATUSES.IDLE,
     categoryStatus: STATUSES.IDLE,
   },
@@ -40,7 +40,7 @@ export const {
 } = productSlice.actions;
 export default productSlice.reducer;
 
-// Thunk to fetch products// Thunk to fetch products
+
 export function fetchProducts(page, categories = [], filter = 1) {
   return async function fetchProductThunk(dispatch) {
     dispatch(setStatus(STATUSES.LOADING));
@@ -55,7 +55,7 @@ export function fetchProducts(page, categories = [], filter = 1) {
       const res = await fetch(`${BASE_URL}/product?${params.toString()}`);
       const data = await res.json();
 
-      dispatch(setProducts(data.products || data)); // Handle both `{ products: [...] }` and `[...]`
+      dispatch(setProducts(data.products || data)); 
       dispatch(setStatus(STATUSES.IDLE));
     } catch (err) {
       console.log(err);
@@ -66,7 +66,7 @@ export function fetchProducts(page, categories = [], filter = 1) {
 
 
     
-// Thunk to fetch categories
+
 export function fetchCategories() {
   return async function fetchCategoryThunk(dispatch) {
     dispatch(setCategoryStatus(STATUSES.LOADING));
