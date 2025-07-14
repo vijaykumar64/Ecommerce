@@ -19,7 +19,7 @@ const Shop = () => {
   const toast = useToast();
 
   useEffect(() => {
-    dispatch(fetchProducts(undefined, categoriesSelected, filter)); // 👈 No pagination
+    dispatch(fetchProducts(undefined, categoriesSelected, filter)); 
   }, [categoriesSelected, filter]);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const Shop = () => {
       gap="40px"
       alignItems="flex-start"
     >
-      {/* Sidebar */}
+     
       <Stack
         direction={"column"}
         gap="20px"
@@ -102,7 +102,7 @@ const Shop = () => {
         </Stack>
       </Stack>
 
-      {/* Products Section */}
+    
       <Stack direction="column" flex={1}>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing="20px">
           {products.map((e) => (
