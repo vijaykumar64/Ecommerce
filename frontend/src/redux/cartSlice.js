@@ -28,7 +28,7 @@ export const addItem = (productid, toast, status) => {
   return async (dispatch, getState) => {
     const userId = localStorage.getItem("TOKEN");
     if (userId && userId.length > 10) {
-      const resp = await fetch(`${BASE_URL}/cart`, { // ✅
+      const resp = await fetch(`${BASE_URL}/cart`, { 
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -65,12 +65,12 @@ export const addItem = (productid, toast, status) => {
   };
 };
 
-// Order success
+
 export const Order = (toast) => {
   return async (dispatch, getState) => {
     const userId = localStorage.getItem("TOKEN");
     if (userId && userId.length > 10) {
-      const resp = await fetch(`${BASE_URL}/order`, { // ✅
+      const resp = await fetch(`${BASE_URL}/order`, { 
         method: "POST",
         headers: { authorization: `bearer ${userId}` },
       });
@@ -88,12 +88,12 @@ export const Order = (toast) => {
   };
 };
 
-// Get cart items
+
 export const getItem = () => {
   return async (dispatch, getState) => {
     const userId = localStorage.getItem("TOKEN");
     if (userId && userId.length > 10) {
-      const resp = await fetch(`${BASE_URL}/cart`, { // ✅
+      const resp = await fetch(`${BASE_URL}/cart`, { 
         method: "GET",
         headers: {
           authorization: `bearer ${userId}`,
@@ -108,7 +108,7 @@ export const getItem = () => {
   };
 };
 
-// Increase quantity
+
 export const IncreaseQty = (cartId, qty) => {
   return async (dispatch, getState) => {
     const user = localStorage.getItem("TOKEN");
@@ -120,7 +120,7 @@ export const IncreaseQty = (cartId, qty) => {
 
     dispatch(getCartItem(UpdatedData || []));
 
-    const resp = await fetch(`${BASE_URL}/cart/${cartId}`, { // ✅
+    const resp = await fetch(`${BASE_URL}/cart/${cartId}`, { 
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -134,7 +134,7 @@ export const IncreaseQty = (cartId, qty) => {
   };
 };
 
-// Decrease quantity
+
 export const DecreaseQty = (cartId, qty) => {
   return async (dispatch, getState) => {
     const user = localStorage.getItem("TOKEN");
@@ -146,7 +146,7 @@ export const DecreaseQty = (cartId, qty) => {
 
     dispatch(getCartItem(UpdatedData || []));
 
-    const resp = await fetch(`${BASE_URL}/cart/${cartId}`, { // ✅
+    const resp = await fetch(`${BASE_URL}/cart/${cartId}`, { 
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -160,11 +160,11 @@ export const DecreaseQty = (cartId, qty) => {
   };
 };
 
-// Add Address
+
 export const AddAddress = (data, toast) => {
   return async (dispatch, getState) => {
     const user = localStorage.getItem("TOKEN");
-    const resp = await fetch(`${BASE_URL}/address`, { // ✅
+    const resp = await fetch(`${BASE_URL}/address`, { 
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -184,11 +184,11 @@ export const AddAddress = (data, toast) => {
   };
 };
 
-// Get Address
+
 export const GetAddress = () => {
   return async (disptach, getState) => {
     const user = localStorage.getItem("TOKEN");
-    const resp = await fetch(`${BASE_URL}/address`, { // ✅
+    const resp = await fetch(`${BASE_URL}/address`, { 
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -205,11 +205,11 @@ export const GetAddress = () => {
   };
 };
 
-// Update Address
+
 export const UpdateAddress = (data, toast) => {
   return async (dispatch, getState) => {
     const user = localStorage.getItem("TOKEN");
-    const resp = await fetch(`${BASE_URL}/address`, { // ✅
+    const resp = await fetch(`${BASE_URL}/address`, { 
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -230,11 +230,11 @@ export const UpdateAddress = (data, toast) => {
   };
 };
 
-// Remove cart item
+
 export const RemoveCartItem = (id, toast) => {
   return async (dispatch, getState) => {
     const user = localStorage.getItem("TOKEN");
-    const resp = await fetch(`${BASE_URL}/cart/${id}`, { // ✅
+    const resp = await fetch(`${BASE_URL}/cart/${id}`, { 
       method: "DELETE",
       headers: {
         "content-type": "application/json",
