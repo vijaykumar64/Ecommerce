@@ -39,7 +39,7 @@ export const { loginFailed, loginSuccess, signupFailure, signupSuccess, logout }
 
 export default userSlice.reducer;
 
-// Login User
+
 export function loginUser(data, toast) {
   return async function (dispatch, getState) {
     try {
@@ -88,7 +88,7 @@ export function loginUser(data, toast) {
   };
 }
 
-// Signup User
+
 export function signupUser(data, toast) {
   return async function (dispatch, getState) {
     try {
