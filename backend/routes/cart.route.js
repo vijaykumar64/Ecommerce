@@ -5,7 +5,6 @@ const { Cartmodel } = require("../model/cart.model");
 const cartRoute=express.Router();
 
 
-//adding cart item
 
 cartRoute.post("/",Authentication,async(req,res)=>{
     const userid=req.body.userid;
@@ -36,7 +35,6 @@ try{
   
 })
 
-// Getting cart item for specific user
 
 cartRoute.get("/",Authentication,async(req,res)=>{
     const userid=req.body.userid;
@@ -49,7 +47,7 @@ cartRoute.get("/",Authentication,async(req,res)=>{
 
 })
 
-//delete cart item
+
 
 cartRoute.delete("/:productid",Authentication,async(req,res)=>{
     const productid=req.params.productid;
@@ -64,7 +62,7 @@ cartRoute.delete("/:productid",Authentication,async(req,res)=>{
 
 })
 
-// Updating Quantity
+
 
 cartRoute.patch("/:cartid",Authentication,async(req,res)=>{
     const userid=req.body.userid;
