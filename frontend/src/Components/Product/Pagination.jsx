@@ -15,7 +15,7 @@ export const Pagination = ({ category = [], filter = 1 }) => {
   }, [page, category, filter]);
 
   useEffect(() => {
-    setPage(1); // reset page when filters change
+    setPage(1); 
   }, [category, filter]);
 
   return (
