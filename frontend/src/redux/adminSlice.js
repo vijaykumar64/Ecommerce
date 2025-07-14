@@ -10,8 +10,8 @@ const initialState = {
   product: [],
   refund: [],
   recentuser: [],
-  categoryList: [], // ✅ Added for dynamic categories
-  orders: [], // ✅ Added for status check
+  categoryList: [], 
+  orders: [], 
 };
 
 const adminSlice = createSlice({
@@ -29,9 +29,9 @@ const adminSlice = createSlice({
       };
     },
     setCategoryList(state, action) {
-      state.categoryList = action.payload || []; // ✅ Reducer to update category list
+      state.categoryList = action.payload || []; 
     },
-    setOrders(state, action) { // ✅ Reducer for order status fetch
+    setOrders(state, action) { 
       state.orders = action.payload || [];
     },
   },
@@ -40,7 +40,7 @@ const adminSlice = createSlice({
 export const { setAdminData, setCategoryList, setOrders } = adminSlice.actions;
 export default adminSlice.reducer;
 
-// Get admin data
+
 export const getAdminData = () => {
   return async (dispatch, getState) => {
     const userId = localStorage.getItem("TOKEN");
@@ -64,7 +64,7 @@ export const getAdminData = () => {
   };
 };
 
-// Fetch product categories
+
 export const fetchCategories = () => {
   return async (dispatch) => {
     try {
@@ -77,7 +77,7 @@ export const fetchCategories = () => {
   };
 };
 
-// Fetch all orders (for status check)
+
 export const fetchAllOrders = () => {
   return async (dispatch) => {
     const token = localStorage.getItem("TOKEN");
@@ -96,7 +96,7 @@ export const fetchAllOrders = () => {
   };
 };
 
-// Role switch
+
 export const roleSwitch = (id, toast) => {
   return async (dispatch, getState) => {
     const userId = localStorage.getItem("TOKEN");
@@ -127,7 +127,7 @@ export const roleSwitch = (id, toast) => {
   };
 };
 
-// Delete cart item
+
 export const deleteCartItem = (id, toast) => {
   return async (dispatch, getState) => {
     const userId = localStorage.getItem("TOKEN");
@@ -152,7 +152,7 @@ export const deleteCartItem = (id, toast) => {
   };
 };
 
-// Delete user
+
 export const deleteUser = (id, toast) => {
   return async (dispatch, getState) => {
     const userId = localStorage.getItem("TOKEN");
@@ -177,7 +177,7 @@ export const deleteUser = (id, toast) => {
   };
 };
 
-// Delete product
+
 export const deleteProduct = (id, toast) => {
   return async (dispatch, getState) => {
     const userId = localStorage.getItem("TOKEN");
@@ -202,7 +202,7 @@ export const deleteProduct = (id, toast) => {
   };
 };
 
-// Delete order
+
 export const deleteOrder = (id, toast) => {
   return async (dispatch, getState) => {
     const userId = localStorage.getItem("TOKEN");
@@ -227,7 +227,7 @@ export const deleteOrder = (id, toast) => {
   };
 };
 
-// Update order status
+
 export const updateOrderStatus = (id, data, toast) => {
   return async (dispatch, getState) => {
     const userId = localStorage.getItem("TOKEN");
@@ -253,7 +253,7 @@ export const updateOrderStatus = (id, data, toast) => {
   };
 };
 
-// Add product
+
 export function AddProduct(data, toast) {
   console.log("Add data", data);
   return async function (dispatch, getState) {
