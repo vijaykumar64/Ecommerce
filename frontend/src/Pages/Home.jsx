@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <Box overflow="hidden" w="100vw">
-      {/* Hero Section with Background */}
+     
       <Box
         bgColor={"rgb(16,23,24)"}
         py={{ base: "40px", md: "80px" }}
@@ -38,7 +38,7 @@ const Home = () => {
           justify="space-between"
           w="100%"
         >
-          {/* Left: Text Section */}
+        
           <Stack spacing={5} flex="1" maxW="500px">
             <Heading
               fontSize={{ base: "32px", md: "50px" }}
@@ -64,7 +64,7 @@ const Home = () => {
             </NavLink>
           </Stack>
 
-          {/* Right: Image Section */}
+        
           <Box
             flexShrink={0}
             borderRadius="xl"
@@ -79,14 +79,14 @@ const Home = () => {
         </Stack>
       </Box>
 
-      {/* Category Section */}
+    
       <Box bgColor={"rgb(16,23,24)"} py="40px">
         <Center>
           <Category />
         </Center>
       </Box>
 
-      {/* Best Seller Section */}
+    
       <Heading
         pb="20px"
         pt="20px"
