@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import AllRoutes from "./Allroutes/allRoutes";
 import Footer from "./Components/Footer/Footer";
-import React from "react"; // REQUIRED for JSX fragments
+import React from "react"; 
 
 
 import Navbar from "./Components/Navbar/Navbar";
