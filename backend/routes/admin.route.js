@@ -8,7 +8,7 @@ const { Usermodel } = require("../model/user.model");
 
 const adminRoute=express.Router();
 
-//get count of all products
+
 
 adminRoute.get("/product/count",Authentication,async(req,res)=>{
     const userid=req.body.userid
@@ -31,7 +31,7 @@ adminRoute.get("/product/count",Authentication,async(req,res)=>{
 })
 
 
-//get count of all cart item
+
 
 adminRoute.get("/cart/count",Authentication,async(req,res)=>{
     const userid=req.body.userid
@@ -52,7 +52,7 @@ adminRoute.get("/cart/count",Authentication,async(req,res)=>{
         res.status(404).send({msg:err.message})
     }
 })
-//get count of orders
+
 
 adminRoute.get("/order/count",Authentication,async(req,res)=>{
     const userid=req.body.userid
@@ -75,7 +75,6 @@ adminRoute.get("/order/count",Authentication,async(req,res)=>{
 })
 
 
-//get count of all users
 
 adminRoute.get("/user/count",Authentication,async(req,res)=>{
     const userid=req.body.userid
@@ -98,7 +97,7 @@ adminRoute.get("/user/count",Authentication,async(req,res)=>{
 })
 
 
-//get all users
+
 
 adminRoute.get("/user/all",Authentication,async(req,res)=>{
     const userid=req.body.userid
@@ -147,7 +146,7 @@ adminRoute.get("/admindata",Authentication,async(req,res)=>{
     }
 })
 
-//get all products
+
 
 adminRoute.get("/product/all",Authentication,async(req,res)=>{
     const userid=req.body.userid
@@ -169,7 +168,7 @@ adminRoute.get("/product/all",Authentication,async(req,res)=>{
     }
 })
 
-//get all cart
+
 
 adminRoute.get("/cart/all",Authentication,async(req,res)=>{
     const userid=req.body.userid
@@ -192,7 +191,7 @@ adminRoute.get("/cart/all",Authentication,async(req,res)=>{
 })
 
 
-//delete cart item
+
 adminRoute.delete("/cart/:productid",Authentication,async(req,res)=>{
     const userid=req.body.userid
     const productid=req.params.productid
@@ -215,7 +214,6 @@ adminRoute.delete("/cart/:productid",Authentication,async(req,res)=>{
 })
 
 
-//delete product
 
 adminRoute.delete("/product/:productid",Authentication,async(req,res)=>{
     const userid=req.body.userid
@@ -239,7 +237,7 @@ adminRoute.delete("/product/:productid",Authentication,async(req,res)=>{
 })
 
 
-//delete user
+
 
 adminRoute.delete("/user/:userid2",Authentication,async(req,res)=>{
     const userid=req.body.userid
@@ -262,7 +260,6 @@ adminRoute.delete("/user/:userid2",Authentication,async(req,res)=>{
     }
 })
 
-//role switcher
 
 adminRoute.patch("/user/:userid2",Authentication,async(req,res)=>{
     const userid=req.body.userid
@@ -287,7 +284,7 @@ adminRoute.patch("/user/:userid2",Authentication,async(req,res)=>{
     }
 })
 
-//Add Product
+
 
 adminRoute.post("/product",Authentication,async(req,res)=>{
     const userid=req.body.userid
@@ -313,7 +310,7 @@ adminRoute.post("/product",Authentication,async(req,res)=>{
 })
 
 
-//limited users
+
 
 adminRoute.get("/user/limit",Authentication,async(req,res)=>{
     const userid=req.body.userid
@@ -335,7 +332,7 @@ adminRoute.get("/user/limit",Authentication,async(req,res)=>{
     }
 })
 
-//delete Order item
+
 adminRoute.delete("/order/:orderID",Authentication,async(req,res)=>{
     const userid=req.body.userid
     const productid=req.params.orderID
@@ -382,7 +379,7 @@ adminRoute.patch("/order/:OrderId",Authentication,async(req,res)=>{
 })
 
 
-//Get refund
+
 
 
 adminRoute.get("/refund",Authentication,async(req,res)=>{
