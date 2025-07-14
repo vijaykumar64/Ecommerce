@@ -18,7 +18,7 @@ import {
   Input,
   SimpleGrid,
   useToast,
-  Textarea, // ✅ Import Textarea
+  Textarea, 
 } from "@chakra-ui/react";
 import { MdAdd } from "react-icons/md";
 import { useDispatch } from "react-redux";
@@ -52,7 +52,7 @@ export const Additem = () => {
       dispatch(AddProduct({ ...productinfo, cost: Number(cost) }, toast));
       onClose();
       setinfo({ title: "", cost: "", category: "", image: "", description: "" });
-      console.log("✅ Product added successfully", productinfo);
+      console.log(" Product added successfully", productinfo);
     } else {
       toast({
         title: "Invalid Input",
