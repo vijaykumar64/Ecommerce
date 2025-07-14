@@ -78,7 +78,7 @@ const User = () => {
           </TabList>
 
           <TabPanels>
-            {/* Login Panel */}
+          
             <TabPanel>
               <Center>
                 <VStack>
@@ -116,7 +116,7 @@ const User = () => {
               </Center>
             </TabPanel>
 
-            {/* Register Panel */}
+         
             <TabPanel>
               <Center>
                 <FormControl>
