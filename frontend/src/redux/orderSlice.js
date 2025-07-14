@@ -18,7 +18,7 @@ export const { getOrders } = orderSlice.actions;
 
 export default orderSlice.reducer;
 
-// Get My Orders
+
 export const getMyOrders = () => {
   return async (dispatch, getState) => {
     const token = localStorage.getItem("TOKEN");
@@ -40,7 +40,7 @@ export const getMyOrders = () => {
   };
 };
 
-// Cancel Request
+
 export function CancelOrder(data, toast) {
   return async function (dispatch, getState) {
     const userId = localStorage.getItem("TOKEN");
