@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-mongoose.set('strictQuery', false); // ✅ avoid warning
+mongoose.set('strictQuery', false); 
 mongoose.set('bufferCommands', false);
 
 const connectDatabase = async () => {
@@ -12,10 +12,10 @@ const connectDatabase = async () => {
       ssl: true,
     });
 
-    console.log(`✅ MongoDB connected: ${connection.connection.host}`);
+    console.log(` MongoDB connected: ${connection.connection.host}`);
   } catch (error) {
-    console.error(`❌ MongoDB connection error: ${error.message}`);
-    throw error; // rethrow to allow server.js to handle it
+    console.error(` MongoDB connection error: ${error.message}`);
+    throw error; 
   }
 };
 
