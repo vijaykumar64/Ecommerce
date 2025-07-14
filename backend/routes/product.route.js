@@ -6,7 +6,6 @@ const { Refundmodel } = require("../model/refund.model");
 const { Authentication } = require("../middleware/Authentication");
 const { Usermodel } = require("../model/user.model");
 
-//get all the products
 
 productRouter.get("/all",async(req,res)=>{
         try{
@@ -18,18 +17,7 @@ productRouter.get("/all",async(req,res)=>{
         }
 })
 
-//get product based on pryage || catego || brand
 
-//query - multiple things filter
-
-//params - one filter
-
-//params - product/productid
-
-//url/search?page=1&category=bakery&brand=nivea
-
-//pagination .limit(9) skip()
-//page no=
 productRouter.get("/", async (req, res) => {
   const { category, brand, filter } = req.query;
   const sorting = parseInt(filter) || 1;
@@ -54,9 +42,7 @@ productRouter.get("/", async (req, res) => {
 });
 
 
-//get products based on search and apply filter based on q && page || category || brand
 
-//product?q=paneer 
 
 productRouter.get("/search",async(req,res)=>{
 
@@ -81,7 +67,7 @@ productRouter.get("/search",async(req,res)=>{
         }
 })
 
-// GET /product/category
+
 productRouter.get("/category", async (req, res) => {
   try {
     const categories = await Productmodel.distinct("category");
@@ -91,7 +77,7 @@ productRouter.get("/category", async (req, res) => {
   }
 });
 
-//get specific product
+
 
 productRouter.get("/:productid",async(req,res)=>{
         const productid=req.params.productid
@@ -107,11 +93,7 @@ productRouter.get("/:productid",async(req,res)=>{
         }
 })
 
-//get filter 
 
-
-//Add Refund Request;
-//Add Product
 
 productRouter.post("/refund",Authentication,async(req,res)=>{
     const userid=req.body.userid
