@@ -16,7 +16,7 @@ const AllRoutes = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/shop" element={<Shop />} />
-      {/* For private routes, you can wrap the element with PrivateRoute */}
+     
       <Route
         path="/cart"
         element={
