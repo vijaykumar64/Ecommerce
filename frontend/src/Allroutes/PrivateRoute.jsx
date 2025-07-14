@@ -7,11 +7,11 @@ const PrivateRoute = ({ children }) => {
   const location = useLocation();
 
   if (!auth) {
-    // Redirect to /user or login page, preserving current location for after-login redirect
+  
     return <Navigate to="/user" state={{ from: location }} replace />;
   }
 
-  // If authenticated, render children components
+  
   return children;
 };
 
