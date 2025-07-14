@@ -5,7 +5,7 @@ const { Addressmodel } = require("../model/address.model");
 const addressRoute=express.Router();
 
 
-//getting address of user
+
 
 addressRoute.get("/",Authentication,async(req,res)=>{
     const userid=req.body.userid;
@@ -23,7 +23,7 @@ addressRoute.get("/",Authentication,async(req,res)=>{
     }
 })
 
-//new address
+
 
 addressRoute.post("/",Authentication,async(req,res)=>{
     const userid=req.body.userid;
@@ -39,7 +39,7 @@ addressRoute.post("/",Authentication,async(req,res)=>{
     }
 })
 
-//to update user
+
 
 addressRoute.patch("/",Authentication,async(req,res)=>{
     const userid=req.body.userid;
